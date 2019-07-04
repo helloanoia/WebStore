@@ -1,7 +1,7 @@
 ﻿@model WebStore.ViewModels.EmployeeView
 
 @{
-    ViewData["Title"] = "Детали сотрудника";
+    ViewData["Title"] = "Детали клиента";
 }
 
 <!DOCTYPE html>
@@ -11,17 +11,26 @@
     <title>title</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <td>@Model.Id</td>
-            <td>@Model.FirstName</td>
-            <td>@Model.SurName</td>
-            <td>@Model.Patronymic</td>
-            <td>@Model.Age</td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Фамилия</td>
+        <td>Имя</td>
+        <td>Отчество</td>
+        <td>Возраст</td>
+        <td>Дата регистрации</td>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.SurName</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.Patronymic</td>
+        <td>@Model.Age</td>
+        <td>@Model.RegistrationDate</td>
+    </tr>
+</table>
 
-    @Html.ActionLink("Назад к списку", "Index")
+@Html.ActionLink("Назад к списку", "Index")
 
 </body>
 </html>
