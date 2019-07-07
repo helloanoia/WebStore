@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<WebStore.ViewModels.EmployeeView>
 @{
-    ViewData["Title"] = "Список сотрудников";
+    ViewData["Title"] = "Список клиентов";
 }
 <!DOCTYPE html>
 
@@ -9,18 +9,16 @@
     <title>title</title>
 </head>
 <body>
-    <table>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.FirstName, "Details", new { id = item.Id })
-                </td>
-                <td>@item.SurName</td>
-                <td>@item.Patronymic</td>
-                <td>@item.Age</td>
-            </tr>
-        }
-    </table>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(@item.SurName + " " + item.FirstName + " " + item.Patronymic, "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
 </body>
 </html>
